@@ -58,7 +58,7 @@ The network is designed with three VLANs, each with its own subnet and a default
 ## Cisco CLI Configuration
 
 ### Switch_A `show run` Output
-Current configuration : 1697 bytes
+    Current configuration : 1697 bytes
                         !
                         version 15.0
                         no service timestamps log datetime msec
@@ -66,7 +66,6 @@ Current configuration : 1697 bytes
                         no service password-encryption
                         !
                         hostname Switch_A
-
                         !
                         no ip domain-lookup
                         !
@@ -133,8 +132,7 @@ Current configuration : 1697 bytes
                         end
               
 ### Switch_B `show run` Output
-Current configuration : 1595 bytes
-
+    Current configuration : 1595 bytes
                         !
                         version 15.0
                         no service timestamps log datetime msec
@@ -197,7 +195,7 @@ Current configuration : 1595 bytes
                         end
                         
   ### MultilayerSwitch_A `show run` Output
-                        Current configuration : 2427 bytes
+      Current configuration : 2427 bytes
                         !
                         version 12.2(37)SE1
                         no service timestamps log datetime msec
