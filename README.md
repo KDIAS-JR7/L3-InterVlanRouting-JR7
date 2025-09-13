@@ -1,5 +1,4 @@
-# Inter-VLAN Routing implementation using Multilayer Switches
-# Inter-VLAN Routing with a Layer 3 Switch
+# Inter-VLAN Routing Implementation with a Layer 3 Switch
 
 ## Project Highlights
 This project demonstrates several key networking concepts:
