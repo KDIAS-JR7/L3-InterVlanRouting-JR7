@@ -56,7 +56,6 @@ The network is designed with three VLANs, each with its own subnet and a default
 | MultilayerSwitch_A | Port channel 1 & Port channel 2 | VLAN 10, VLAN 20, VLAN 30 |
 
 ## Cisco CLI Configuration
-_Note: The `show run` outputs and copy buttons from the HTML file cannot be directly replicated in Markdown. You can paste the code blocks below as preformatted text._
 
 ### Switch_A `show run` Output
 Current configuration : 1697 bytes
@@ -195,7 +194,8 @@ Current configuration : 1697 bytes
                          login
                         !
                         end
-                        ### MultilayerSwitch_A `show run` Output
+                        
+  ### MultilayerSwitch_A `show run` Output
                         Current configuration : 2427 bytes
                         !
                         version 12.2(37)SE1
