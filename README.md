@@ -133,7 +133,8 @@ Current configuration : 1697 bytes
                         end
               
 ### Switch_B `show run` Output
- Current configuration : 1595 bytes
+Current configuration : 1595 bytes
+
                         !
                         version 15.0
                         no service timestamps log datetime msec
