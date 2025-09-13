@@ -59,3 +59,77 @@ The network is designed with three VLANs, each with its own subnet and a default
 _Note: The `show run` outputs and copy buttons from the HTML file cannot be directly replicated in Markdown. You can paste the code blocks below as preformatted text._
 
 ### Switch_A `show run` Output
+Current configuration : 1697 bytes
+                        !
+                        version 15.0
+                        no service timestamps log datetime msec
+                        no service timestamps debug datetime msec
+                        no service password-encryption
+                        !
+                        hostname Switch_A
+
+                        !
+                        no ip domain-lookup
+                        !
+                        spanning-tree mode pvst
+                        spanning-tree extend system-id
+                        !
+                        interface Port-channel1
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport mode trunk
+                        !
+                        interface FastEthernet0/1
+                         switchport access vlan 10
+                         switchport mode access
+                        !
+                        interface FastEthernet0/2
+                         switchport access vlan 10
+                         switchport mode access
+                        !
+                        interface FastEthernet0/3
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport mode trunk
+                         channel-group 1 mode active
+                        !
+                        interface FastEthernet0/4
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport mode trunk
+                         channel-group 1 mode active
+                        !
+                        interface FastEthernet0/5
+                         switchport access vlan 30
+                         switchport mode access
+                        !
+                        interface FastEthernet0/6
+                         switchport access vlan 30
+                         switchport mode access
+                        !
+                        interface FastEthernet0/7
+                        !
+                        !
+                        interface FastEthernet0/23
+                        !
+                        interface FastEthernet0/24
+                        !
+                        interface GigabitEthernet0/1
+                        !
+                        interface GigabitEthernet0/2
+                        !
+                        interface Vlan1
+                         no ip address
+                         shutdown
+                        !
+                        line con 0
+                         exec-timeout 30 0
+                        !
+                        line vty 0 4
+                         login
+                        line vty 5 15
+                         login
+                        !
+                        !
+                        end
+              
