@@ -133,3 +133,160 @@ Current configuration : 1697 bytes
                         !
                         end
               
+### Switch_B `show run` Output
+ Current configuration : 1595 bytes
+                        !
+                        version 15.0
+                        no service timestamps log datetime msec
+                        no service timestamps debug datetime msec
+                        no service password-encryption
+                        !
+                        hostname Switch_B
+                        !
+                        no ip domain-lookup
+                        !
+                        spanning-tree mode pvst
+                        spanning-tree extend system-id
+                        !
+                        interface Port-channel2
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport mode trunk
+                        !
+                        interface FastEthernet0/1
+                         switchport access vlan 20
+                         switchport mode access
+                        !
+                        interface FastEthernet0/2
+                         switchport access vlan 20
+                         switchport mode access
+                        !
+                        interface FastEthernet0/3
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport mode trunk
+                         channel-group 2 mode active
+                        !
+                        interface FastEthernet0/4
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport mode trunk
+                         channel-group 2 mode active
+                        !
+                        interface FastEthernet0/5
+                        !
+                        !
+                        interface FastEthernet0/24
+                        !
+                        interface GigabitEthernet0/1
+                        !
+                        interface GigabitEthernet0/2
+                        !
+                        interface Vlan1
+                         no ip address
+                         shutdown!
+                        !
+                        line con 0
+                         exec-timeout 30 0
+                        !
+                        line vty 0 4
+                         login
+                        line vty 5 15
+                         login
+                        !
+                        end
+                        ### MultilayerSwitch_A `show run` Output
+                        Current configuration : 2427 bytes
+                        !
+                        version 12.2(37)SE1
+                        no service timestamps log datetime msec
+                        no service timestamps debug datetime msec
+                        no service password-encryption
+                        !
+                        hostname MultilayerSwitch_A
+                        !
+                        ip routing
+                        !
+                        no ip domain-lookup
+                        !
+                        !
+                        spanning-tree mode pvst
+                        !
+                        interface Port-channel1
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport trunk encapsulation dot1q
+                         switchport mode trunk
+                        !
+                        interface Port-channel2
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport trunk encapsulation dot1q
+                         switchport mode trunk
+                        !
+                        interface FastEthernet0/1
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport trunk encapsulation dot1q
+                         switchport mode trunk
+                         channel-group 1 mode active
+                        !
+                        interface FastEthernet0/2
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport trunk encapsulation dot1q
+                         switchport mode trunk
+                         channel-group 1 mode active
+                        !
+                        interface FastEthernet0/3
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport trunk encapsulation dot1q
+                         switchport mode trunk
+                         channel-group 2 mode active
+                        !
+                        interface FastEthernet0/4
+                         switchport trunk native vlan 99
+                         switchport trunk allowed vlan 10,20,30
+                         switchport trunk encapsulation dot1q
+                         switchport mode trunk
+                         channel-group 2 mode active
+                        !
+                        interface FastEthernet0/5
+                        !
+                        interface FastEthernet0/24
+                        !
+                        interface GigabitEthernet0/1
+                        !
+                        interface GigabitEthernet0/2
+                        !
+                        interface Vlan1
+                         no ip address
+                         shutdown
+                        !
+                        interface Vlan10
+                         mac-address 000c.cf7e.e501
+                         ip address 192.168.1.1 255.255.255.0
+                        !
+                        interface Vlan20
+                         mac-address 000c.cf7e.e502
+                         ip address 192.168.2.1 255.255.255.0
+                        !
+                        interface Vlan30
+                         mac-address 000c.cf7e.e503
+                         ip address 192.168.3.1 255.255.255.0
+                        !
+                        ip classless
+                        !
+                        ip flow-export version 9
+                        !                  
+                        !
+                        line con 0
+                         exec-timeout 30 0
+                        !
+                        line aux 0
+                        !
+                        line vty 0 4
+                         login
+                        !
+                        end
